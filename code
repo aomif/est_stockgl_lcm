@@ -2,7 +2,7 @@
 import streamlit as st
 st.set_page_config(layout="wide")
 from PIL import Image
-image = Image.open('/content/irpclogo.png')
+image = Image.open('irpclogo.png')
 
 import datetime as dt
 import random
@@ -27,11 +27,11 @@ import sklearn
 
 
 #import info table
-sell_percent = pd.read_excel("/content/Info.xlsx", sheet_name = "Sell Percent")
-yield_percent = pd.read_excel("/content/Info.xlsx", sheet_name = "Yield Percent")
-historical_inv_quan = pd.read_excel("/content/Info.xlsx", sheet_name = "Inventory Quantity")
-historical_inv_amount = pd.read_excel("/content/Info.xlsx", sheet_name = "Inventory Amount")
-historical_lcm = pd.read_excel("/content/Info.xlsx", sheet_name = "LCM")
+sell_percent = pd.read_excel("Info.xlsx", sheet_name = "Sell Percent")
+yield_percent = pd.read_excel("Info.xlsx", sheet_name = "Yield Percent")
+historical_inv_quan = pd.read_excel("Info.xlsx", sheet_name = "Inventory Quantity")
+historical_inv_amount = pd.read_excel("Info.xlsx", sheet_name = "Inventory Amount")
+historical_lcm = pd.read_excel("Info.xlsx", sheet_name = "LCM")
 
 # @st.cache
 def first_calculation(date,converted_input_all,sell_percent,yield_percent,predicted_transfer_inv_quan,predicted_transfer_inv_amount,historical_inv_quan,historical_inv_amount):
@@ -994,8 +994,8 @@ def to_excel(result_all,inv_all,lcm_all):
     return final_data
 
 def train_model(model_path,scaler_path,input_model):
-    model = pickle.load(open(f"/content/{model_path}",'rb'))
-    scaler = pickle.load(open(f"/content/{scaler_path}",'rb'))
+    model = pickle.load(open(f"{model_path}",'rb'))
+    scaler = pickle.load(open(f"{scaler_path}",'rb'))
     scaled_input_model = scaler.transform(input_model)
     y = model.predict(scaled_input_model)
     return y
@@ -1062,7 +1062,7 @@ with st.expander("Input information",True):
     with left_column:
         st.markdown('<font color="skyblue"> 🟢 Download the input variables template </font>',True)
         st.caption('The number of period can be any number from 1.')
-        with open("/content/Input.xlsx",'rb') as my_file:
+        with open("Input.xlsx",'rb') as my_file:
             with st.spinner("Template file is downloading."):
                 st.download_button(label = 'Download Template', data = my_file, file_name = 'example template.xlsx', 
                                     mime = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
@@ -1093,13 +1093,13 @@ with st.expander("Input information",True):
                     
 
 #import info table
-sell_percent = pd.read_excel("/content/Info.xlsx", sheet_name = "Sell Percent")
-yield_percent = pd.read_excel("/content/Info.xlsx", sheet_name = "Yield Percent")
-historical_inv_quan = pd.read_excel("/content/Info.xlsx", sheet_name = "Inventory Quantity")
-historical_inv_amount = pd.read_excel("/content/Info.xlsx", sheet_name = "Inventory Amount")
-transfer_ratio_amount = pd.read_excel("/content/Info.xlsx", sheet_name = "Transfer Amount")
-transfer_ratio_quan = pd.read_excel("/content/Info.xlsx", sheet_name = "Transfer Quantity")
-historical_lcm = pd.read_excel("/content/Info.xlsx", sheet_name = "LCM")
+sell_percent = pd.read_excel("Info.xlsx", sheet_name = "Sell Percent")
+yield_percent = pd.read_excel("Info.xlsx", sheet_name = "Yield Percent")
+historical_inv_quan = pd.read_excel("Info.xlsx", sheet_name = "Inventory Quantity")
+historical_inv_amount = pd.read_excel("Info.xlsx", sheet_name = "Inventory Amount")
+transfer_ratio_amount = pd.read_excel("Info.xlsx", sheet_name = "Transfer Amount")
+transfer_ratio_quan = pd.read_excel("Info.xlsx", sheet_name = "Transfer Quantity")
+historical_lcm = pd.read_excel("Info.xlsx", sheet_name = "LCM")
 
 if uploaded_file is not None:
     with st.expander("Modeling",True):
