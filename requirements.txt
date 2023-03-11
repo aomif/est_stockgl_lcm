@@ -1,0 +1,17 @@
+Altair
+boto3
+ccxt
+google
+gspread
+pandas
+regex
+requests
+s3fs==0.4.*
+streamlit==1.1.*
+matplotlib
+scikit_learn
+Keras
+numpy
+seaborn
+snscrape
+
