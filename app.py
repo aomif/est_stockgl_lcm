@@ -26,11 +26,11 @@ import sklearn
 
 
 #import info table
-sell_percent = pd.read_excel("est_stockgl_lcm/Info.xlsx", sheet_name = "Sell Percent")
-yield_percent = pd.read_excel("est_stockgl_lcm/Info.xlsx", sheet_name = "Yield Percent")
-historical_inv_quan = pd.read_excel("est_stockgl_lcm/Info.xlsx", sheet_name = "Inventory Quantity")
-historical_inv_amount = pd.read_excel("est_stockgl_lcm/Info.xlsx", sheet_name = "Inventory Amount")
-historical_lcm = pd.read_excel("est_stockgl_lcm/Info.xlsx", sheet_name = "LCM")
+sell_percent = pd.read_excel('Info.xlsx', sheet_name = "Sell Percent")
+yield_percent = pd.read_excel('Info.xlsx', sheet_name = "Yield Percent")
+historical_inv_quan = pd.read_excel('Info.xlsx', sheet_name = "Inventory Quantity")
+historical_inv_amount = pd.read_excel('Info.xlsx', sheet_name = "Inventory Amount")
+historical_lcm = pd.read_excel('Info.xlsx', sheet_name = "LCM")
 
 # @st.cache
 def first_calculation(date,converted_input_all,sell_percent,yield_percent,predicted_transfer_inv_quan,predicted_transfer_inv_amount,historical_inv_quan,historical_inv_amount):
