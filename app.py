@@ -23,10 +23,11 @@ import pickle
 
 import sklearn
 
-
+url = https://github.com/aomif/est_stockgl_lcm/blob/fbd29da2659edc3eae4d1417e804a37bab067479/Info.xlsx
+myfile = requests.get(url)
 
 #import info table
-sell_percent = pd.read_excel('Info.xlsx', sheet_name = "Sell Percent")
+sell_percent = pd.read_excel(myfile.content, sheet_name = "Sell Percent")
 yield_percent = pd.read_excel('Info.xlsx', sheet_name = "Yield Percent")
 historical_inv_quan = pd.read_excel('Info.xlsx', sheet_name = "Inventory Quantity")
 historical_inv_amount = pd.read_excel('Info.xlsx', sheet_name = "Inventory Amount")
