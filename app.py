@@ -26,10 +26,10 @@ import sklearn
 import requests
 url = 'https://raw.githubusercontent.com/aomif/est_stockgl_lcm/main/Info.xlsx'
 #url = 'https://github.com/aomif/est_stockgl_lcm/90ce2f11f686e540d38edff775fb0470926b15c7/Info.xlsx'
-#myfile = requests.get(url)
+myfile = requests.get(url)
 
 #import info table
-sell_percent = pd.read_excel(url, sheet_name = "Sell Percent")
+sell_percent = pd.read_excel(url.content, sheet_name = "Sell Percent")
 yield_percent = pd.read_excel('Info.xlsx', sheet_name = "Yield Percent")
 historical_inv_quan = pd.read_excel('Info.xlsx', sheet_name = "Inventory Quantity")
 historical_inv_amount = pd.read_excel('Info.xlsx', sheet_name = "Inventory Amount")
