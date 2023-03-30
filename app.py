@@ -28,7 +28,7 @@ url = 'https://github.com/aomif/est_stockgl_lcm/blob/c4878dc8caeb36f942dbb23aa91
 myfile = requests.get(url)
 
 #import info table
-sell_percent = pd.read_excel(myfile.content, sheet_name = "Sell Percent")
+sell_percent = pd.read_excel(myfile, sheet_name = "Sell Percent")
 yield_percent = pd.read_excel('Info.xlsx', sheet_name = "Yield Percent")
 historical_inv_quan = pd.read_excel('Info.xlsx', sheet_name = "Inventory Quantity")
 historical_inv_amount = pd.read_excel('Info.xlsx', sheet_name = "Inventory Amount")
