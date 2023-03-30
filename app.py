@@ -23,6 +23,7 @@ import pickle
 
 import sklearn
 
+import requests
 url = 'https://github.com/aomif/est_stockgl_lcm/blob/fbd29da2659edc3eae4d1417e804a37bab067479/Info.xlsx'
 myfile = requests.get(url)
 
