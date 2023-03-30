@@ -24,9 +24,7 @@ import pickle
 import sklearn
 
 import requests
-url = 'Info.xlsx'
-#url = 'https://gitlab.com/aomif/est_stockgl_lcm/-/raw/master/Info.xlsx'
-#url = 'https://github.com/aomif/est_stockgl_lcm/blob/fbd29da2659edc3eae4d1417e804a37bab067479/Info.xlsx'
+url = 'https://github.com/aomif/est_stockgl_lcm/blob/c4878dc8caeb36f942dbb23aa91080cf821185a1/Info.xlsx'
 myfile = requests.get(url)
 
 #import info table
