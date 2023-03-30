@@ -25,7 +25,7 @@ import sklearn
 
 import requests
 #url = 'https://github.com/aomif/est_stockgl_lcm/blob/c4878dc8caeb36f942dbb23aa91080cf821185a1/Info.xlsx'
-url = 'https://github.com/aomif/est_stockgl_lcm/raw/master/Info.xlsx'
+url = 'https://github.com/aomif/est_stockgl_lcm/blob/90ce2f11f686e540d38edff775fb0470926b15c7/Info.xlsx'
 #myfile = requests.get(url)
 
 #import info table
